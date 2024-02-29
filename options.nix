@@ -7,7 +7,7 @@ let
   username = "kuper";
   hostname = "nixos";
   userHome = "/home/${username}";
-  flakeDir = "${userHome}/.dotfiles/zaneyos";
+  flakeDir = "${userHome}/.dotfiles/KuperOS";
   waybarStyle = "slickbar-num"; # simplebar, slickbar, slickbar-num, or default
 in {
   # User Variables
@@ -26,8 +26,8 @@ in {
   wallpaperDir = "${userHome}/Pictures/Wallpapers";
   screenshotDir = "${userHome}/Pictures/Screenshots";
   flakeDir = "${flakeDir}";
-  flakePrev = "${userHome}/.dotfiles/.zaneyos-previous";
-  flakeBackup = "${userHome}/.dotfiles/.zaneyos-backup";
+  flakePrev = "${userHome}/.dotfiles/.kuperos-previous";
+  flakeBackup = "${userHome}/.dotfiles/.kuperos-backup";
   terminal = "alacritty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   # System Settings
