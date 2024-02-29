@@ -1,0 +1,2 @@
+# KuperOS
+My NixOS config
