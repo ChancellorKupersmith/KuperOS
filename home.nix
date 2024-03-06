@@ -13,6 +13,7 @@ in {
   
   # Add Directories to PATH
   home.sessionPath = [
+    "$HOME/.dotfiles/os_scripts"
     # To run cargo installed binaries
     # "$HOME/.cargo/bin"
     # Resolves rustup binaries not being recognized (ex: rust-lldb)

@@ -33,7 +33,8 @@
   services.blueman.enable = true;
   security.pam.services.swaylock = {
     text = ''
-      auth include login
+      auth sufficient pam_fprintd_grosshack.so
+      auth sufficient pam_unix.so try_first_pass nullok
     '';
   };
 

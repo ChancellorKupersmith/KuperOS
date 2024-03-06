@@ -143,10 +143,23 @@ in {
     };
 
     # FOR NEOVIDE
-    extraConfigLua = '' 
-      vim.opt.guifont = "JetBrainsMono\\ NFM,Noto_Color_Emoji:h14"
+    extraConfigLua = ''
+      vim.opt.guifont = "JetBrainsMono\\ NFM,Noto_Color_Emoji:h12"
+      
+      vim.g.neovide_scale_factor = 1.0
+      local change_scale_factor = function(delta)
+        vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+      end
+      vim.keymap.set("n", "<C-+>", function()
+        change_scale_factor(1.25)
+      end)
+      vim.keymap.set("n", "<C-_>", function()
+        change_scale_factor(1/1.25)
+      end)
+
       vim.g.neovide_cursor_animation_length = 0.05
       vim.g.neovide_fullscreen = false
+      vim.g.neovide_transparency = 0.95
       local colors = {
         blue   = '#${theme.base0D}',
         cyan   = '#${theme.base0C}',
@@ -232,6 +245,54 @@ in {
         key = "<S><C-P>";
         action = "+";
         options.silent = false;
+      }
+      {
+        mode = ["" "c"];
+        key = "<C-+>";
+        action = "function() change_scale_factor(1.025) end";
+        options.silent = false;
+      }
+      {
+        mode = ["" "c"];
+        key = "<C-_>";
+        action = "function() change_scale_factor(1/1.025) end";
+        options.silent = false;
+      }
+      {
+        mode = ["" "c"];
+        key = "<C-BS>";
+        action = "function() ResetGuiFont(1) end";
+        options.silent = false;
+      }
+      {
+        mode = ["n"];
+        key = "<leader>y";
+        action = "+y";
+        options.silent = true;
+      }
+      {
+        mode = ["n"];
+        key = "<leader>Y";
+        action = "+yg_";
+        options.silent = true;
+      }
+      {
+        mode = ["n"];
+        key = "<leader>yy";
+        action = "+yy";
+        options.silent = true;
+      }
+      {
+        mode = ["n"];
+        key = "<leader>p";
+        action = "+p";
+        options.silent = true;
+      }
+      {
+        mode = ["n"];
+        key = "<leader>P";
+        action = "+P";
+        options.silent = true;
       }
     ];
   };

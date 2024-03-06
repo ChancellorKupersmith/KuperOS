@@ -21,6 +21,8 @@
     ./wezterm.nix
     ./zsh.nix
     ./fish.nix
+    ./hypridle.nix
+    ./hyprlock.nix
 
     # Place Home Files Like Pictures
     ./files.nix

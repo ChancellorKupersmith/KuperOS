@@ -1,5 +1,5 @@
 #!/bin/sh
 pushd
 cd /home/kuper/.dotfiles/KuperOS
-home-manager switch -f home.nix
+sudo nix flake update
 popd | cd

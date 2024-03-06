@@ -40,7 +40,11 @@ pkgs.writeShellScriptBin "wallsetter" ''
         5)
           TRANSITION=$TRANSITION5
         ;;
-      esac
+        esac
+
+      # Set lockscreen
+      cp $WALLPAPER $HOME/Pictures/lockscreen.png
+      # Set desktop
       ${pkgs.swww}/bin/swww img "$WALLPAPER" $TRANSITION
       sleep $TIMEOUT
     fi

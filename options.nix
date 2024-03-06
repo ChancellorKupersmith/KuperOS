@@ -15,15 +15,15 @@ in {
   hostname = "${hostname}";
   gitUsername = "ChancellorKupersmith";
   gitEmail = "kupersmith3.6@gmail.com";
-  theme = "seti";
+  theme = "material-darker";
   slickbar = if waybarStyle == "slickbar" then true else false;
   slickbar-num = if waybarStyle == "slickbar-num" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   borderAnim = false;
   browser = "firefox";
-  wallpaperGit = "https://github.com/ChancellorKupersmith/Wallpapers.git"; # This will give you my wallpapers
-  # ^ (use as is or replace with your own repo - removing will break the wallsetter script) 
-  wallpaperDir = "${userHome}/Pictures/Wallpapers";
+  wallpaperGit = "https://github.com/ChancellorKupersmith/Wallpapers.git";
+  # ^ (removing this will break the wallsetter script) 
+  wallpaperDir = "${userHome}/Pictures/wallpapers";
   screenshotDir = "${userHome}/Pictures/Screenshots";
   flakeDir = "${flakeDir}";
   flakePrev = "${userHome}/.dotfiles/.kuperos-previous";

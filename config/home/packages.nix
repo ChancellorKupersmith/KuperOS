@@ -8,11 +8,15 @@ in {
   home.packages = with pkgs; [
     pkgs."${browser}" discord libvirt swww grim slurp gnome.file-roller
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
-    gimp obs-studio audacity pavucontrol tree
-    font-awesome spotify swayidle neovide element-desktop swaylock
+    gimp obs-studio audacity pavucontrol tree github-desktop zellij
+    font-awesome spotify swayidle neovide element-desktop
+    hypridle hyprlock google-chrome
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     
     # Import Scripts
+    (import ./../scripts/jarvis-start.nix {inherit pkgs; })
+    (import ./../scripts/dvt.nix { inherit pkgs; })
+    (import ./../scripts/getPlayingSong.nix { inherit pkgs; })
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })
     (import ./../scripts/squirtle.nix { inherit pkgs; })
