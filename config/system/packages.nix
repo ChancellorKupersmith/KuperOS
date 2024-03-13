@@ -30,6 +30,7 @@
     keepassxc
     pwgen
     gnupg
+    sops
     
     # System
     libvirt
