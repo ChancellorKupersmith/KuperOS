@@ -65,7 +65,7 @@
     xorg.libXi xorg.libXmu freeglut
     xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib 
     ncurses5 stdenv.cc binutils
-    wireplumber
+    wireplumber_0_4_17
 
     # Development
     ollama
