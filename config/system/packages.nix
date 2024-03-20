@@ -42,7 +42,7 @@
     ydotool
     wl-clipboard
     socat  
-    pkg-config
+    # pkg-config
     symbola    
     noto-fonts-color-emoji
     material-icons
@@ -65,7 +65,6 @@
     xorg.libXi xorg.libXmu freeglut
     xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib 
     ncurses5 stdenv.cc binutils
-    wireplumber
 
     # Development
     ollama
