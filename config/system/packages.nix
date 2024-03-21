@@ -42,7 +42,7 @@
     ydotool
     wl-clipboard
     socat  
-    # pkg-config
+    pkg-config
     symbola    
     noto-fonts-color-emoji
     material-icons
