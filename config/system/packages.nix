@@ -26,7 +26,7 @@
     git gh git-crypt
     # Security
     pinentry-qt
-    fprintd
+    # fprintd
     keepassxc
     pwgen
     gnupg
