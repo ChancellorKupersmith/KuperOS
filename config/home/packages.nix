@@ -8,9 +8,9 @@ in {
   home.packages = with pkgs; [
     pkgs."${browser}" discord libvirt swww grim slurp gnome.file-roller
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
-    gimp obs-studio audacity pavucontrol tree github-desktop zellij
+    gimp obs-studio audacity pavucontrol tree github-desktop
     font-awesome spotify swayidle neovide element-desktop
-    hypridle hyprlock google-chrome packer vscode slack
+    hypridle hyprlock google-chrome vscode slack
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     
     # Import Scripts
