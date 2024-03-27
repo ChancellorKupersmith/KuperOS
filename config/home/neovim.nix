@@ -28,7 +28,7 @@ in {
     };
 
     colorschemes.base16.enable = true;
-    colorschemes.base16.customColorScheme = {
+    colorschemes.base16.colorscheme = {
       base00 = "#${theme.base00}";
       base01 = "#${theme.base01}";
       base02 = "#${theme.base02}";
@@ -51,8 +51,10 @@ in {
       barbecue.enable = true;
       gitsigns = {
         enable = true;
-        linehl = true;
-        numhl = true;
+	settings = {
+	  linehl = true;
+	  numhl = true;
+	};
       };
       telescope = {
 	enable = true;
@@ -65,7 +67,7 @@ in {
       nvim-colorizer.enable = true;
       nvim-autopairs.enable = true;
       nix.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       lualine = {
         enable = true;
       };
