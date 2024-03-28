@@ -10,7 +10,7 @@ in {
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
     gimp obs-studio audacity pavucontrol tree github-desktop
     font-awesome spotify swayidle neovide element-desktop
-    hypridle hyprlock google-chrome vscode slack postman
+    hypridle hyprlock google-chrome vscodium slack postman
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     
     # Import Scripts
