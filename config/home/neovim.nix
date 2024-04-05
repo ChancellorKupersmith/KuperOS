@@ -10,7 +10,7 @@ in {
     viAlias = true;
     globals.mapleader = " "; # Sets the leader key to space
     
-    options = {
+    opts = {
       clipboard="unnamedplus";
       number = true;         # Show line numbers
       relativenumber = true; # Show relative line numbers
