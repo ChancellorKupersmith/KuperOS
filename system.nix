@@ -60,6 +60,7 @@ in {
     FLAKE = "${flakeDir}";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     CUDA_PATH = "${pkgs.cudatoolkit}";
+    CHROMIUM_BROWSER_PATH = "${pkgs.chromium}/bin";
     # hard code cuda 12 path (cuda run time lib, lcudart, not found in recent release for some reason?)
     CUDA12_PATH = "${pkgs.cudatoolkit}/lib";
     # CUDA_LIBPATH = "${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.ncurses5}/lib";
