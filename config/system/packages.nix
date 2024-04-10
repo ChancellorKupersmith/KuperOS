@@ -69,7 +69,7 @@
     # Development
     ccache
     ollama
-    # (llama-cpp.override { cudaSupport = true; cudaPackages = cudaPackages; })
+    (llama-cpp.override { cudaSupport = true; cudaPackages = cudaPackages; })
     python311Packages.huggingface-hub
     go
     libgcc
