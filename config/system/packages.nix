@@ -67,6 +67,7 @@
     ncurses5 stdenv.cc binutils
 
     # Development
+    ccache
     ollama
     (llama-cpp.override { cudaSupport = true; cudaPackages = cudaPackages; })
     python311Packages.huggingface-hub
