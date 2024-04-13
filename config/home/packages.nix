@@ -12,7 +12,7 @@ in {
     font-awesome spotify swayidle neovide element-desktop
     hypridle hyprlock google-chrome vscodium slack postman
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    brave chromium slack    
+    tor brave chromium slack
     # Import Scripts
     (import ./../scripts/jarvis-start.nix {inherit pkgs; })
     (import ./../scripts/dvt.nix { inherit pkgs; })
