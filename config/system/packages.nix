@@ -81,6 +81,8 @@
     #ninja
   ];
   
+  # hint electron apps to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs = {
     steam.gamescopeSession.enable = true;
@@ -88,8 +90,8 @@
     seahorse.enable=true;
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      xwayland.enable = true;
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      # xwayland.enable = true;
     };
     fuse.userAllowOther = true;
     mtr.enable = true;
