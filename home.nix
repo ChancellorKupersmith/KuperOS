@@ -28,7 +28,6 @@ in {
     inputs.nixvim.homeManagerModules.nixvim
     inputs.hyprland.homeManagerModules.default
     ./config/home
-    inputs.hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1;
   ];
 
   # Define Settings For Xresources
