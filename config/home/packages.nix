@@ -6,13 +6,13 @@ let
 in {
   # Install Packages For The User
   home.packages = with pkgs; [
-    pkgs."${browser}" discord libvirt swww grim slurp gnome.file-roller
-    swaynotificationcenter rofi-wayland imv transmission-gtk mpv
-    gimp obs-studio audacity pavucontrol tree github-desktop zellij
+    pkgs."${browser}" zoom discord libvirt swww grim slurp gnome.file-roller
+    swaynotificationcenter rofi-wayland imv mpv
+    gimp obs-studio audacity pavucontrol tree github-desktop
     font-awesome spotify swayidle neovide element-desktop
-    hypridle hyprlock google-chrome
+    hypridle hyprlock google-chrome vscodium slack postman
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    
+    brave chromium slack
     # Import Scripts
     (import ./../scripts/jarvis-start.nix {inherit pkgs; })
     (import ./../scripts/dvt.nix { inherit pkgs; })

@@ -22,7 +22,7 @@
     jack.enable = true;
   };
   hardware.pulseaudio.enable = false;
-  sound.enable = true;
+  # sound.enable = true;
   security.rtkit.enable = true;
   programs.thunar.enable = true;
   services.gvfs.enable = true;
@@ -38,7 +38,7 @@
     '';
   };
 
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
+  # services.fprintd.enable = true;
+  # services.fprintd.tod.enable = true;
+  # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 }

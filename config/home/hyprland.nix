@@ -24,6 +24,10 @@ in with lib; {
       windowrule = float, ^(steam)$
       windowrule = size 1080 900, ^(steam)$
       windowrule = center, ^(steam)$
+      xwayland {
+        force_zero_scaling = true
+      }
+
       general {
         gaps_in = 6
         gaps_out = 8
@@ -122,7 +126,7 @@ in with lib; {
         preserve_split = true
       }
       master {
-        new_is_master = true
+        new_status = 'master'
       }
       bind = ${modifier},Return,exec,${terminal}
       bind = ${modifier}SHIFT,Return,exec,rofi-launcher

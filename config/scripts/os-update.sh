@@ -1,5 +1,6 @@
 #!/bin/sh
-pushd
-cd /home/kuper/.dotfiles/KuperOS
+
+set START_DIR $(pwd)
+cd /home/kuper/.dotfiles/KuperOS || exit 1
 sudo nix flake update
-popd | cd
+cd START_DIR || exit 1

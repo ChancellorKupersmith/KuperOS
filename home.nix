@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, username,
+{ config, pkgs, pkgs-unstable, inputs, username,
   gtkThemeFromScheme, ... }:
 let 
   inherit (import ./options.nix)

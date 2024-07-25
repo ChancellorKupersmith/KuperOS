@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  plugins = pkgs.vimPlugins;
+  # plugins = pkgs.vimPlugins;
   theme = config.colorScheme.palette;
 in {
   programs.nixvim = {
@@ -10,7 +10,7 @@ in {
     viAlias = true;
     globals.mapleader = " "; # Sets the leader key to space
     
-    options = {
+    opts = {
       clipboard="unnamedplus";
       number = true;         # Show line numbers
       relativenumber = true; # Show relative line numbers
@@ -28,7 +28,7 @@ in {
     };
 
     colorschemes.base16.enable = true;
-    colorschemes.base16.customColorScheme = {
+    colorschemes.base16.colorscheme = {
       base00 = "#${theme.base00}";
       base01 = "#${theme.base01}";
       base02 = "#${theme.base02}";
@@ -51,8 +51,10 @@ in {
       barbecue.enable = true;
       gitsigns = {
         enable = true;
-        linehl = true;
-        numhl = true;
+	settings = {
+	  linehl = true;
+	  numhl = true;
+	};
       };
       telescope = {
 	enable = true;
@@ -65,7 +67,7 @@ in {
       nvim-colorizer.enable = true;
       nvim-autopairs.enable = true;
       nix.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       lualine = {
         enable = true;
       };
@@ -120,26 +122,26 @@ in {
       lsp-lines.enable = true;
       treesitter = {
         enable = true;
-        indent = true;
-        nixGrammars = true;
-        nixvimInjections = true;
+	# indent.enable = true;
+        # nixGrammars = true;
+        # nixvimInjections = true;
       };
-      nvim-cmp = {
-	enable = true;
-	autoEnableSources = true;
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	];
-	mapping = {
-	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<Tab>" = {
-	    action = ''cmp.mapping.select_next_item()'';
-	    modes = [ "i" "s" ];
-          };
-	};
-      };
+      # nvim-cmp = {
+      #   enable = true;
+      #   autoEnableSources = true;
+      #   sources = [
+      #     { name = "nvim_lsp"; }
+      #     { name = "path"; }
+      #     { name = "buffer"; }
+      #   ];
+      #   mapping = {
+      #    "<CR>" = "cmp.mapping.confirm({ select = true })";
+      #    "<Tab>" = {
+      #      action = ''cmp.mapping.select_next_item()'';
+      #      modes = [ "i" "s" ];
+      #    };
+      #  };
+      # };
     };
 
     # FOR NEOVIDE

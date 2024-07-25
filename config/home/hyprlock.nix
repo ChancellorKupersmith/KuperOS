@@ -1,4 +1,4 @@
-{ pkgs, config, wallpaperDir, ... }:
+{ pkgs, config, ... }:
 
 let
   palette = config.colorScheme.palette;
@@ -12,7 +12,7 @@ in {
     }
 
     background {
-      path = $HOME/Pictures/wallpapers/screenlock.png
+      path = $HOME/Pictures/Wallpapers/screenlock.png
 
       # Blur
       blur_passes = 3

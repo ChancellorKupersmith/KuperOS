@@ -1,7 +1,3 @@
-# PLEASE READ THE WIKI FOR DETERMINING
-# WHAT TO PUT HERE AS OPTIONS. 
-# https://gitlab.com/Zaney/zaneyos/-/wikis/Setting-Options
-
 let
   # THINGS YOU NEED TO CHANGE
   username = "kuper";

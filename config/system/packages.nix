@@ -23,13 +23,14 @@
     lolcat
 
     # GIT
-    git gh git-crypt
+    git gh git-crypt git-lfs
     # Security
     pinentry-qt
     fprintd
     keepassxc
     pwgen
     gnupg
+    sops
     
     # System
     libvirt
@@ -65,8 +66,8 @@
     xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib 
     ncurses5 stdenv.cc binutils
 
-
     # Development
+    ccache
     ollama
     (llama-cpp.override { cudaSupport = true; cudaPackages = cudaPackages; })
     python311Packages.huggingface-hub
@@ -80,6 +81,8 @@
     #ninja
   ];
   
+  # hint electron apps to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs = {
     steam.gamescopeSession.enable = true;
@@ -87,8 +90,8 @@
     seahorse.enable=true;
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      xwayland.enable = true;
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      # xwayland.enable = true;
     };
     fuse.userAllowOther = true;
     mtr.enable = true;
