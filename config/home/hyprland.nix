@@ -1,9 +1,8 @@
-{ pkgs, config, lib, inputs, ... }:
 
 let
   theme = config.colorScheme.palette;
   hyprplugins = inputs.hyprland-plugins.packages.${pkgs.system};
-  inherit (import ../../options.nix) 
+  inherit (import ../../options.nix)
     browser cpuType gpuType
     wallpaperDir borderAnim
     theKBDLayout terminal
@@ -14,20 +13,25 @@ in with lib; {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
+    settings = {
+      debug = {
+        disable_logs = false;
+      };
+    };
     plugins = [
       # hyprplugins.hyprtrails
     ];
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''
-      monitor=,preferred,auto,1.3333
+      monitor=,preferred,auto,auto
       windowrule = float, ^(steam)$
       windowrule = size 1080 900, ^(steam)$
       windowrule = center, ^(steam)$
       xwayland {
         force_zero_scaling = true
       }
-
+      env = AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0
       general {
         gaps_in = 6
         gaps_out = 8
@@ -40,7 +44,7 @@ in with lib; {
 
       input {
         kb_layout = ${theKBDLayout}, ${theSecondKBDLayout}
-	kb_options = grp:alt_shift_toggle
+        kb_options = grp:alt_shift_toggle
         kb_options=caps:super
         follow_mouse = 1
         touchpad {
@@ -49,6 +53,7 @@ in with lib; {
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
         accel_profile = flat
       }
+      env = HYPRLAND_TRACE, 1
       env = NIXOS_OZONE_WL, 1
       env = NIXPKGS_ALLOW_UNFREE, 1
       env = XDG_CURRENT_DESKTOP, Hyprland
@@ -80,19 +85,11 @@ in with lib; {
       }
       animations {
         enabled = yes
-        bezier = wind, 0.05, 0.9, 0.1, 1.05
-        bezier = winIn, 0.1, 1.1, 0.1, 1.1
-        bezier = winOut, 0.3, -0.3, 0, 1
-        bezier = liner, 1, 1, 1, 1
         animation = windows, 1, 6, wind, slide
         animation = windowsIn, 1, 6, winIn, slide
         animation = windowsOut, 1, 5, winOut, slide
         animation = windowsMove, 1, 5, wind, slide
         animation = border, 1, 1, liner
-        ${if borderAnim == true then ''
-          animation = borderangle, 1, 30, liner, loop
-        '' else ''
-        ''}
         animation = fade, 1, 10, default
         animation = workspaces, 1, 5, wind
       }
@@ -108,19 +105,15 @@ in with lib; {
         }
       }
       plugin {
-        hyprtrails {
-          color = rgba(${theme.base0A}ff)
-        }
+
       }
-      exec-once = $POLKIT_BIN
       exec-once = dbus-update-activation-environment --systemd --all
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+      exec-once = $POLKIT_BIN
       exec-once = swww init
-      exec-once = waybar
       exec-once = swaync
-      exec-once = wallsetter
-      exec-once = nm-applet --indicator
-      exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'
+      exec-once = nm-applet --indicator &
+      exec-once = waybar & wallsetter
       dwindle {
         pseudotile = true
         preserve_split = true
@@ -133,9 +126,9 @@ in with lib; {
       bind = ${modifier}SHIFT,W,exec,web-search
       bind = ${modifier}SHIFT,N,exec,swaync-client -rs
       ${if browser == "google-chrome" then ''
-	bind = ${modifier},W,exec,google-chrome-stable
+        bind = ${modifier},W,exec,google-chrome-stable
       '' else ''
-	bind = ${modifier},W,exec,${browser}
+        bind = ${modifier},W,exec,${browser}
       ''}
       bind = ${modifier},E,exec,emopicker9000
       bind = ${modifier},S,exec,screenshootin
